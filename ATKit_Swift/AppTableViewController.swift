@@ -26,7 +26,7 @@ class AppTableViewController: UIViewController {
         self.edgesForExtendedLayout = [];
         self.view.addSubview(self.tableView);
         self.tableView.frame = self.view.frame
-        self.showNavTitle(title: "tableView", back: true);
+        self.showNavTitle(title: "tableView");
     }
 
 }
