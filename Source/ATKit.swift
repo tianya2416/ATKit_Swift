@@ -7,7 +7,7 @@
 //
 
 import UIKit
-extension UIView{
+public extension UIView{
     class func xibName() -> String{
         let name : String = NSStringFromClass(self.classForCoder());
         let datas :[String] = name.components(separatedBy: ".");
@@ -22,7 +22,7 @@ extension UIView{
         return self.init();
     }
 }
-extension UITableViewCell{
+public extension UITableViewCell{
     static var confiTag : Int = 32241983;
     class func cellForTableView(tableView:UITableView,indexPath:IndexPath) ->Self{
        return self.cellForTableView(tableView: tableView, indexPath: indexPath, identifier: nil, config: nil);
@@ -48,7 +48,7 @@ extension UITableViewCell{
         return cell as! Self;
     }
 }
-extension UICollectionViewCell{
+public extension UICollectionViewCell{
     static var confiTag : Int = 32241981;
     class func cellForCollectionView(collectionView:UICollectionView,indexPath : IndexPath) -> Self{
         return self.cellForCollectionView(collectionView: collectionView, indexPath: indexPath, identifier:nil, config: nil);
@@ -84,7 +84,7 @@ extension UICollectionViewCell{
         return cell as! Self;
     }
 }
-extension UICollectionReusableView{
+public extension UICollectionReusableView{
     static var configTag : Int = 32241982;
     class func viewForCollectionView(collectionView:UICollectionView,elementKind:String,indexPath:IndexPath) ->Self{
         return self.viewForCollectionView(collectionView: collectionView, elementKind: elementKind, indexPath: indexPath, identifier: nil, config: nil);
@@ -122,7 +122,7 @@ extension UICollectionReusableView{
         return cell as! Self
     }
 }
-extension UIViewController{
+public extension UIViewController{
     func showNavTitle(title : String?){
         self.showNavTitle(title: title, back:true);
     }
