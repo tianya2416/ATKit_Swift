@@ -1,0 +1,28 @@
+//
+//  AppDelegate.swift
+//  AppCategory
+//
+//  Created by wangws1990 on 2020/5/8.
+//  Copyright © 2020 wangws1990. All rights reserved.
+//
+
+import UIKit
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+
+    var window: UIWindow?
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        self.window = UIWindow.init(frame: UIScreen.main.bounds)
+        self.window?.makeKeyAndVisible();
+        self.window?.backgroundColor = UIColor.white;
+        let nvc = UINavigationController.init(rootViewController: ViewController())
+        self.window?.rootViewController = nvc;
+        return true
+    }
+
+
+}
+
