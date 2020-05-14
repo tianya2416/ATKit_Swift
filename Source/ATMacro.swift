@@ -12,7 +12,7 @@ import UIKit
 public let SCREEN_WIDTH    :CGFloat    = UIScreen.main.bounds.size.width
 public let SCREEN_HEIGHT   :CGFloat    = UIScreen.main.bounds.size.height
 
-public let iPhoneX        : Bool       = ATMacro.iPhone_X();//is iPhoneX
+public let iPhoneX         : Bool       = ATMacro.iPhone_X();//is iPhoneX
 public let STATUS_BAR_HIGHT:CGFloat    = (iPhoneX ? 44: 20)//iPhoneX 44,other 20
 public let NAVI_BAR_HIGHT  :CGFloat    = (iPhoneX ? 88: 64)//iPhoneX 88,other 64
 public let TAB_BAR_ADDING  :CGFloat    = (iPhoneX ? 34 : 0)//iphoneX 34,other 0
