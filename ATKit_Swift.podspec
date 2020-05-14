@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/tianya2416/ATKit_Swift.git', :tag => s.version }
   s.requires_arc = true
   s.ios.deployment_target = '10.0'
-  s.source_files     = 'Source/*.(swift)'
+  s.source_files     = 'Source/*.swift'
   s.swift_version    = '5.0'
   
 end
