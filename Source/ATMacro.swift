@@ -19,7 +19,7 @@ public class ATMacro : NSObject {
     public class func Navi_Bar() ->CGFloat{
         return (ATMacro.iPhoneX() ? 88: 64);
     }
-    public class func Tab_Baar() ->CGFloat{
+    public class func Tab_Bar() ->CGFloat{
         return (ATMacro.iPhoneX() ? 34: 0);
     }
     public class func iPhoneX() -> Bool{

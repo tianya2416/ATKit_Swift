@@ -122,11 +122,12 @@ public extension UICollectionReusableView{
         return cell as! Self
     }
 }
-public extension UIViewController{
-    func showNavTitle(title : String?){
+@objc extension UIViewController{
+    
+    open func showNavTitle(title : String?){
         self.showNavTitle(title: title, back:true);
     }
-    func showNavTitle(title :String?,back:Bool){
+    open func showNavTitle(title :String?,back:Bool){
         self.navigationItem.title = title ?? "";
         if back {
             self.setBackItem(backItem:UIImage.init(named:"icon_nav_back"))
@@ -135,10 +136,10 @@ public extension UIViewController{
             self.navigationItem.hidesBackButton = true;
         }
     }
-    func setBackItem(backItem:UIImage?){
+    open func setBackItem(backItem:UIImage?){
         self.setBackItem(backItem: backItem, closeItem:UIImage.init(named: "icon_nav_close"));
     }
-    func setBackItem(backItem:UIImage?,closeItem:UIImage?){
+    open func setBackItem(backItem:UIImage?,closeItem:UIImage?){
         if self.navigationController != nil {
             if self.navigationController?.viewControllers.count == 1 && (self.presentingViewController != nil) {
                 self.navigationItem.leftBarButtonItem = self.navItem(rightItem:false, image: closeItem , title:(closeItem != nil) ? nil:"ㄨ", color:nil, target:self, action: #selector(goBack))
@@ -154,18 +155,10 @@ public extension UIViewController{
             }
         }
     }
-    func setKeyBoardDismiss(){
-        UIApplication.shared.keyWindow?.endEditing(true)
-    }
-    func setLargeTitleDisplayModeNever(){
-         if #available(iOS 11.0, *) {
-            self.navigationItem.largeTitleDisplayMode = .never
-        }
-    }
-    @objc func goBack(){
+    @objc open func goBack(){
         self.back(animated:true)
     }
-    @objc func back(animated:Bool){
+    @objc open func back(animated:Bool){
         if self.navigationController?.viewControllers != nil {
             if (self.navigationController?.viewControllers.count)! > 1 {
                 self.navigationController?.popViewController(animated: animated);
@@ -175,17 +168,17 @@ public extension UIViewController{
             }
         }
     }
-    func dismissOrPopToRootControlelr(){
+    open func dismissOrPopToRootControlelr(){
         self.dismissOrPopToRootController(animated: true);
     }
-    func dismissOrPopToRootController(animated : Bool){
+    open func dismissOrPopToRootController(animated : Bool){
         if (self.presentingViewController != nil) {
             self.dismiss(animated:animated, completion: nil)
         }else if (self.navigationController?.viewControllers.count)! > 1{
             self.navigationController?.popToRootViewController(animated: animated);
         }
     }
-    func navItem(rightItem :Bool,image:UIImage?,title:String?,color:UIColor?,target: Any?,action:Selector) -> UIBarButtonItem{
+    open func navItem(rightItem :Bool,image:UIImage?,title:String?,color:UIColor?,target: Any?,action:Selector) -> UIBarButtonItem{
         let button:UIButton = UIButton.init(type: .custom);
         button.addTarget(target, action:action, for: .touchUpInside);
         button.setTitle(title, for: .normal);
@@ -195,20 +188,21 @@ public extension UIViewController{
         button.contentHorizontalAlignment = rightItem ? UIControl.ContentHorizontalAlignment.right : UIControl.ContentHorizontalAlignment.left;
         return UIBarButtonItem.init(customView: button);
     }
-    func setNavRightItem(image:UIImage?,title:String?,color:UIColor?,action:Selector){
+    open func setNavRightItem(image:UIImage?,title:String?,color:UIColor?,action:Selector){
         self.navigationItem.rightBarButtonItem = self.navItem(rightItem:true, image: image, title: title, color: color, target:self, action:action);
     }
-    class func rootTopPresentedController()->UIViewController{
+    
+    open class func rootTopPresentedController()->UIViewController{
         return self.rootTopPresentedControllerWihtKeys(keys: nil);
     }
-    class func rootTopPresentedControllerWihtKeys(keys:[String]? = nil)->UIViewController{
+    open class func rootTopPresentedControllerWihtKeys(keys:[String]? = nil)->UIViewController{
         let window : UIWindow =  ((UIApplication.shared.delegate?.window)!)!;
         return (window.rootViewController?.topPresentedControllerWihtKeys(keys: keys))!;
     }
-    func topPresentedController()->UIViewController{
+    open func topPresentedController()->UIViewController{
         return self.topPresentedControllerWihtKeys(keys:nil);
     }
-    func topPresentedControllerWihtKeys(keys:[String]? = nil)->UIViewController{
+    open func topPresentedControllerWihtKeys(keys:[String]? = nil)->UIViewController{
         let top : [String] = (keys != nil) ? keys! : ["centerViewController", "contentViewController"];
         var rootVC : UIViewController = self;
         if rootVC is UITabBarController {
