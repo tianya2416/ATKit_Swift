@@ -62,6 +62,9 @@ extension AppTableViewController : UITableViewDataSource,UITableViewDelegate{
     //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true);
+        
+        let root = UIViewController.rootTopPresentedController()
+        root.navigationController?.pushViewController(AppConnectionController(), animated: true)
     }
 }
 

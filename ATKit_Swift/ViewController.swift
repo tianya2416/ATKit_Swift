@@ -35,7 +35,8 @@ class ViewController: UIViewController {
         self.connectionBtn.addTarget(self, action: #selector(connectionAction), for: .touchUpInside);
     }
     @objc func tableAction(){
-        UIViewController.rootTopPresentedController().navigationController?.pushViewController(AppTableViewController(), animated: true);
+        let nvc = UINavigationController.init(rootViewController: AppTableViewController())
+        self.present(nvc, animated: true, completion: nil) //UIViewController.rootTopPresentedController().navigationController?.pushViewController(AppTableViewController(), animated: true);
     }
     @objc func connectionAction(){
         UIViewController.rootTopPresentedController().navigationController?.pushViewController(AppConnectionController(), animated: true);

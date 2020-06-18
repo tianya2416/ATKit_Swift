@@ -222,11 +222,12 @@ public extension UICollectionReusableView{
                 }
             }
         }
-        while rootVC.presentingViewController != nil && rootVC.presentingViewController?.isBeingDismissed == false {
+        while rootVC.presentedViewController != nil && rootVC.presentedViewController?.isBeingDismissed == false {
             rootVC = rootVC.presentedViewController!;
         }
         if rootVC is UINavigationController {
             let nvc : UINavigationController = rootVC as! UINavigationController;
+            print(nvc.viewControllers)
             rootVC = nvc.topViewController!;
         }
         
