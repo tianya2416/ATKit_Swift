@@ -227,7 +227,6 @@ public extension UICollectionReusableView{
         }
         if rootVC is UINavigationController {
             let nvc : UINavigationController = rootVC as! UINavigationController;
-            print(nvc.viewControllers)
             rootVC = nvc.topViewController!;
         }
         
