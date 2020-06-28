@@ -11,19 +11,19 @@ import UIKit
 
 public class ATMacro : NSObject {
     public class func iPhone() -> Bool{
-        return UIDevice.current.userInterfaceIdiom == .phone ? true : false;
+        return UIDevice.current.userInterfaceIdiom == .phone ? true : false
     }
     public class func Status_Bar() ->CGFloat{
-        return (ATMacro.iPhoneX() ? 44: 20);
+        return (ATMacro.iPhoneX() ? 44: 20)
     }
     public class func Navi_Bar() ->CGFloat{
-        return (ATMacro.iPhoneX() ? 88: 64);
+        return (ATMacro.iPhoneX() ? 88: 64)
     }
     public class func Tab_Bar() ->CGFloat{
-        return (ATMacro.iPhoneX() ? 34: 0);
+        return (ATMacro.iPhoneX() ? 34: 0)
     }
     public class func iPhoneX() -> Bool{
-        let window : UIWindow = ((UIApplication.shared.delegate?.window)!)!;
+        let window : UIWindow = ((UIApplication.shared.delegate?.window)!)!
            if #available(iOS 11.0, *) {
                let inset : UIEdgeInsets = window.safeAreaInsets
             if (inset.bottom == 34 || inset.bottom == 21) && ATMacro.iPhone() {

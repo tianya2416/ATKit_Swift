@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     }
     @objc func tableAction(){
         let nvc = UINavigationController.init(rootViewController: AppTableViewController())
-        self.present(nvc, animated: true, completion: nil) //UIViewController.rootTopPresentedController().navigationController?.pushViewController(AppTableViewController(), animated: true);
+        self.present(nvc, animated: true, completion: nil) 
     }
     @objc func connectionAction(){
         UIViewController.rootTopPresentedController().navigationController?.pushViewController(AppConnectionController(), animated: true);
