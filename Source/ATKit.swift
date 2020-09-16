@@ -214,7 +214,7 @@ public extension UICollectionReusableView{
         var rootVC : UIViewController = self;
         if rootVC is UITabBarController {
             let tabVC : UITabBarController = rootVC as! UITabBarController
-            let vc = tabVC.selectedViewController != nil ? tabVC.selectedViewController : tabVC.children.first
+            let vc = tabVC.selectedViewController != nil ? tabVC.selectedViewController : tabVC.childViewControllers.first
             if vc != nil {
                 return vc!.topPresentedControllerWihtKeys(keys: top)
             }

@@ -54,7 +54,7 @@ extension AppConnectionController : UICollectionViewDelegate,UICollectionViewDat
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let view : AppCollectionHeadView = AppCollectionHeadView.viewForCollectionView(collectionView: collectionView, elementKind: kind, indexPath: indexPath);
-        let string = kind == UICollectionView.elementKindSectionHeader ? "Header" : "Footer";
+        let string = kind == UICollectionElementKindSectionHeader ? "Header" : "Footer";
         view.titleLab.text = string + String(indexPath.row + 1);
         return view;
     }
