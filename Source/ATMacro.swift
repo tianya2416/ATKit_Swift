@@ -9,18 +9,20 @@
 import Foundation
 import UIKit
 
+private let at_iphonex : Bool = ATMacro.iPhoneX()
+
 public class ATMacro : NSObject {
     public class func iPhone() -> Bool{
         return UIDevice.current.userInterfaceIdiom == .phone ? true : false
     }
     public class func Status_Bar() ->CGFloat{
-        return (ATMacro.iPhoneX() ? 44: 20)
+        return (at_iphonex ? 44: 20)
     }
     public class func Navi_Bar() ->CGFloat{
-        return (ATMacro.iPhoneX() ? 88: 64)
+        return (at_iphonex ? 88: 64)
     }
     public class func Tab_Bar() ->CGFloat{
-        return (ATMacro.iPhoneX() ? 34: 0)
+        return (at_iphonex ? 34: 0)
     }
     public class func iPhoneX() -> Bool{
         let window : UIWindow = ((UIApplication.shared.delegate?.window)!)!

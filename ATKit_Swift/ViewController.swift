@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         print(ATMacro.iPhoneX())
         self.edgesForExtendedLayout = [];
-        self.showNavTitle(title: "主页", back: false);
+        self.showNavTitle(title: "主页");
         self.view.addSubview(self.tableBtn);
         self.view.addSubview(self.connectionBtn);
         
