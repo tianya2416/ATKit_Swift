@@ -9,33 +9,36 @@
 import Foundation
 import UIKit
 
-private let at_iphonex : Bool = ATMacro.iPhoneX()
+private let at_iphone                 = ATMacro.iPhone_Bar()
 
 public class ATMacro : NSObject {
-    public class func iPhone() -> Bool{
-        return UIDevice.current.userInterfaceIdiom == .phone ? true : false
+    public class func at_iphoneX() -> Bool{
+        return at_iphone.iphoneX
     }
-    public class func Status_Bar() ->CGFloat{
-        return (at_iphonex ? 44: 20)
+    public class func at_statusBar() ->CGFloat{
+        return at_iphone.statusBar
     }
-    public class func Navi_Bar() ->CGFloat{
-        return (at_iphonex ? 88: 64)
+    public class func at_naviBar() ->CGFloat{
+        return (at_iphone.statusBar + 44)
     }
-    public class func Tab_Bar() ->CGFloat{
-        return (at_iphonex ? 34: 0)
+    public class func at_tabBar() ->CGFloat{
+        return at_iphone.tabBar
     }
-    public class func iPhoneX() -> Bool{
+    class func iPhone_Bar() ->(iphoneX :Bool,statusBar : CGFloat,tabBar : CGFloat){
         let window : UIWindow = ((UIApplication.shared.delegate?.window)!)!
            if #available(iOS 11.0, *) {
                let inset : UIEdgeInsets = window.safeAreaInsets
-            if (inset.bottom == 34 || inset.bottom == 21) && ATMacro.iPhone() {
-                   return true;
+            if (inset.bottom > 0){//34 or 21
+                return (true,inset.top,inset.bottom)
                }else{
-                   return false
+                return (false,inset.top,inset.bottom)
                }
            } else {
-              return false;
-           };
+                return (false,20,0)
+           }
+    }
+    class func iPhone() -> Bool{
+        return UIDevice.current.userInterfaceIdiom == .phone ? true : false
     }
     public class func imageWithColor(color:UIColor) -> UIImage{
           let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
@@ -46,5 +49,5 @@ public class ATMacro : NSObject {
           let image = UIGraphicsGetImageFromCurrentImageContext()
           UIGraphicsEndImageContext()
           return image!
-      }
+    }
 }

@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(ATMacro.iPhoneX())
+        print(ATMacro.at_iphoneX())
         self.edgesForExtendedLayout = [];
         self.showNavTitle(title: "主页");
         self.view.addSubview(self.tableBtn);
@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         self.connectionBtn.addTarget(self, action: #selector(connectionAction), for: .touchUpInside);
     }
     @objc func tableAction(){
+        print(ATMacro.at_iphoneX())
         let nvc = UINavigationController.init(rootViewController: AppTableViewController())
         self.present(nvc, animated: true, completion: nil) 
     }
