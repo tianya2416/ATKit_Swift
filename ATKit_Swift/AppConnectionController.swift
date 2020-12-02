@@ -63,9 +63,12 @@ extension AppConnectionController : UICollectionViewDelegate,UICollectionViewDat
         return 2;
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30;
+        return 10;
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return AppCollectionViewCell.sizeForCollectionView(collectionView: collectionView, indexPath: indexPath, width: (self.view.frame.size.width - 40 - 1)/3, type: .width) { (cell) in
+//
+//        }
         let width = CGFloat((UIScreen.main.bounds.size.width - 4*top - 1)/3);
         return CGSize.init(width:width, height: 40);
     }

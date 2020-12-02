@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ATKit_Swift'
-  s.version          = '0.2.2'
+  s.version          = '0.2.3'
   s.summary          = 'Some classes and class category commonly used in iOS rapid development'
   s.description      = <<-DESC
                        Some classes and class category commonly used in iOS rapid development.
@@ -11,8 +11,8 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/tianya2416/ATKit_Swift.git', :tag => s.version }
   s.requires_arc = true
   s.ios.deployment_target = '10.0'
-  s.source_files     = 'Source/*.swift'
+  //s.source_files     = 'Source/*.swift'
+  s.source_files     = 'Source/**/*'
   s.swift_version    = '5.0'
-  
 end
 

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,35 +11,39 @@
 		0F4C5D7E246687FD0030D2C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C5D7C246687FD0030D2C4 /* Main.storyboard */; };
 		0F4C5D80246688000030D2C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C5D7F246688000030D2C4 /* Assets.xcassets */; };
 		0F4C5D83246688000030D2C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C5D81246688000030D2C4 /* LaunchScreen.storyboard */; };
-		0F4C5D8C246688500030D2C4 /* ATKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4C5D8B246688500030D2C4 /* ATKit.swift */; };
 		0F4C5D912466885B0030D2C4 /* AppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4C5D8D2466885A0030D2C4 /* AppCollectionViewCell.swift */; };
 		0F4C5D922466885B0030D2C4 /* AppCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C5D8E2466885A0030D2C4 /* AppCollectionViewCell.xib */; };
 		0F4C5D932466885B0030D2C4 /* AppTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4C5D8F2466885A0030D2C4 /* AppTableViewController.swift */; };
 		0F4C5D942466885B0030D2C4 /* AppConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4C5D902466885A0030D2C4 /* AppConnectionController.swift */; };
 		0F4C5D98246688990030D2C4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C5D95246688990030D2C4 /* README.md */; };
 		0F4C5D99246688990030D2C4 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C5D96246688990030D2C4 /* LICENSE */; };
-		0F4C5D9A246688990030D2C4 /* ATKit_Swift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C5D97246688990030D2C4 /* ATKit_Swift.podspec */; };
 		0F4C5D9C246688F40030D2C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4C5D9B246688F40030D2C4 /* ViewController.swift */; };
-		0F4C5D9E246698540030D2C4 /* ATMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4C5D9D246698540030D2C4 /* ATMacro.swift */; };
+		0F97FC372577B8140074E91F /* ATKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F97FC342577B8140074E91F /* ATKit.swift */; };
+		0F97FC382577B8140074E91F /* ATMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F97FC352577B8140074E91F /* ATMacro.swift */; };
+		0F97FC392577B8140074E91F /* ATKit_Swift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0F97FC362577B8140074E91F /* ATKit_Swift.podspec */; };
+		79C9E2DF2458DE309B140E79 /* Pods_ATKit_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04856DCE72BF12A392917A00 /* Pods_ATKit_Swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04856DCE72BF12A392917A00 /* Pods_ATKit_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ATKit_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F4C5D73246687FD0030D2C4 /* ATKit_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATKit_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F4C5D76246687FD0030D2C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F4C5D7D246687FD0030D2C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F4C5D7F246688000030D2C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F4C5D82246688000030D2C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F4C5D84246688000030D2C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F4C5D8B246688500030D2C4 /* ATKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATKit.swift; sourceTree = "<group>"; };
 		0F4C5D8D2466885A0030D2C4 /* AppCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCollectionViewCell.swift; sourceTree = "<group>"; };
 		0F4C5D8E2466885A0030D2C4 /* AppCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppCollectionViewCell.xib; sourceTree = "<group>"; };
 		0F4C5D8F2466885A0030D2C4 /* AppTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTableViewController.swift; sourceTree = "<group>"; };
 		0F4C5D902466885A0030D2C4 /* AppConnectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConnectionController.swift; sourceTree = "<group>"; };
 		0F4C5D95246688990030D2C4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0F4C5D96246688990030D2C4 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		0F4C5D97246688990030D2C4 /* ATKit_Swift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATKit_Swift.podspec; sourceTree = "<group>"; };
 		0F4C5D9B246688F40030D2C4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0F4C5D9D246698540030D2C4 /* ATMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATMacro.swift; sourceTree = "<group>"; };
+		0F97FC342577B8140074E91F /* ATKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATKit.swift; sourceTree = "<group>"; };
+		0F97FC352577B8140074E91F /* ATMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATMacro.swift; sourceTree = "<group>"; };
+		0F97FC362577B8140074E91F /* ATKit_Swift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATKit_Swift.podspec; sourceTree = "<group>"; };
+		9E945B9A99196897CE82DB56 /* Pods-ATKit_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATKit_Swift.debug.xcconfig"; path = "Target Support Files/Pods-ATKit_Swift/Pods-ATKit_Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		DA771D079A5D5E5207C94C1A /* Pods-ATKit_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATKit_Swift.release.xcconfig"; path = "Target Support Files/Pods-ATKit_Swift/Pods-ATKit_Swift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79C9E2DF2458DE309B140E79 /* Pods_ATKit_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +61,14 @@
 		0F4C5D6A246687FD0030D2C4 = {
 			isa = PBXGroup;
 			children = (
-				0F4C5D97246688990030D2C4 /* ATKit_Swift.podspec */,
+				0F97FC362577B8140074E91F /* ATKit_Swift.podspec */,
+				0F97FC332577B8140074E91F /* Source */,
 				0F4C5D96246688990030D2C4 /* LICENSE */,
 				0F4C5D95246688990030D2C4 /* README.md */,
-				0F4C5D8A246688500030D2C4 /* Source */,
 				0F4C5D75246687FD0030D2C4 /* ATKit_Swift */,
 				0F4C5D74246687FD0030D2C4 /* Products */,
+				A04B3B788A8CA972B97C78BC /* Pods */,
+				2BF490AABCD43B3A3271CD52 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,13 +97,30 @@
 			path = ATKit_Swift;
 			sourceTree = "<group>";
 		};
-		0F4C5D8A246688500030D2C4 /* Source */ = {
+		0F97FC332577B8140074E91F /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				0F4C5D8B246688500030D2C4 /* ATKit.swift */,
-				0F4C5D9D246698540030D2C4 /* ATMacro.swift */,
+				0F97FC342577B8140074E91F /* ATKit.swift */,
+				0F97FC352577B8140074E91F /* ATMacro.swift */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		2BF490AABCD43B3A3271CD52 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04856DCE72BF12A392917A00 /* Pods_ATKit_Swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A04B3B788A8CA972B97C78BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E945B9A99196897CE82DB56 /* Pods-ATKit_Swift.debug.xcconfig */,
+				DA771D079A5D5E5207C94C1A /* Pods-ATKit_Swift.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,9 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F4C5D87246688000030D2C4 /* Build configuration list for PBXNativeTarget "ATKit_Swift" */;
 			buildPhases = (
+				3EAD50F79E82D8073C034B28 /* [CP] Check Pods Manifest.lock */,
 				0F4C5D6F246687FD0030D2C4 /* Sources */,
 				0F4C5D70246687FD0030D2C4 /* Frameworks */,
 				0F4C5D71246687FD0030D2C4 /* Resources */,
+				E590C9291166867D4F8F2CE8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,7 +185,7 @@
 			files = (
 				0F4C5D99246688990030D2C4 /* LICENSE in Resources */,
 				0F4C5D83246688000030D2C4 /* LaunchScreen.storyboard in Resources */,
-				0F4C5D9A246688990030D2C4 /* ATKit_Swift.podspec in Resources */,
+				0F97FC392577B8140074E91F /* ATKit_Swift.podspec in Resources */,
 				0F4C5D80246688000030D2C4 /* Assets.xcassets in Resources */,
 				0F4C5D98246688990030D2C4 /* README.md in Resources */,
 				0F4C5D922466885B0030D2C4 /* AppCollectionViewCell.xib in Resources */,
@@ -169,17 +195,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3EAD50F79E82D8073C034B28 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ATKit_Swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E590C9291166867D4F8F2CE8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ATKit_Swift/Pods-ATKit_Swift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ATKit_Swift/Pods-ATKit_Swift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ATKit_Swift/Pods-ATKit_Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0F4C5D6F246687FD0030D2C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0F4C5D9C246688F40030D2C4 /* ViewController.swift in Sources */,
+				0F97FC372577B8140074E91F /* ATKit.swift in Sources */,
 				0F4C5D932466885B0030D2C4 /* AppTableViewController.swift in Sources */,
 				0F4C5D942466885B0030D2C4 /* AppConnectionController.swift in Sources */,
-				0F4C5D8C246688500030D2C4 /* ATKit.swift in Sources */,
 				0F4C5D912466885B0030D2C4 /* AppCollectionViewCell.swift in Sources */,
-				0F4C5D9E246698540030D2C4 /* ATMacro.swift in Sources */,
+				0F97FC382577B8140074E91F /* ATMacro.swift in Sources */,
 				0F4C5D77246687FD0030D2C4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +390,7 @@
 		};
 		0F4C5D88246688000030D2C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E945B9A99196897CE82DB56 /* Pods-ATKit_Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -340,6 +409,7 @@
 		};
 		0F4C5D89246688000030D2C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA771D079A5D5E5207C94C1A /* Pods-ATKit_Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

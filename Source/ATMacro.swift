@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+public enum ATSize {
+    case width
+    case height
+    case size
+}
 private let at_iphone                 = ATMacro.iPhone_Bar()
 
 public class ATMacro : NSObject {
@@ -25,20 +30,15 @@ public class ATMacro : NSObject {
         return at_iphone.tabBar
     }
     class func iPhone_Bar() ->(iphoneX :Bool,statusBar : CGFloat,tabBar : CGFloat){
-        let window : UIWindow = ((UIApplication.shared.delegate?.window)!)!
-           if #available(iOS 11.0, *) {
-               let inset : UIEdgeInsets = window.safeAreaInsets
-            if (inset.bottom > 0){//34 or 21
-                return (true,inset.top,inset.bottom)
-               }else{
-                return (false,inset.top,inset.bottom)
-               }
-           } else {
-                return (false,20,0)
-           }
-    }
-    class func iPhone() -> Bool{
-        return UIDevice.current.userInterfaceIdiom == .phone ? true : false
+        if let window = UIApplication.shared.delegate?.window {
+            if #available(iOS 11.0, *) {
+                let inset : UIEdgeInsets = window!.safeAreaInsets
+                return (inset.bottom > 0, inset.top,inset.bottom)
+            } else {
+                 return (false,20,0)
+            }
+        }
+        return (false,20,0)
     }
     public class func imageWithColor(color:UIColor) -> UIImage{
           let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
