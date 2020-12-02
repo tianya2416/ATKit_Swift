@@ -3,7 +3,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'ATKit_Swift' do
-  pod 'Hue'
+#  pod 'Hue'
 #  pod 'ATKit_Swift', :path => './PodsLocal/'
 end
 

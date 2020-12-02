@@ -5,7 +5,7 @@
 //  Created by wangws1990 on 2020/5/8.
 //  Copyright © 2020 wangws1990. All rights reserved.
 //
-
+//s.source_files     = 'Source/*.swift'
 import UIKit
 
 class ViewController: UIViewController {
