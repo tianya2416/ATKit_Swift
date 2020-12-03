@@ -15,9 +15,12 @@ class ViewController: UIViewController {
     lazy var connectionBtn : UIButton = {
         return UIButton.init(type: .custom);
     }()
+    lazy var mainView : AppMainView = {
+        return AppMainView.instanceView()
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(ATMacro.at_iphoneX())
+        print(ATKit.at_iphoneX())
         self.edgesForExtendedLayout = [];
         self.showNavTitle(title: "主页");
         self.view.addSubview(self.tableBtn);
@@ -33,9 +36,12 @@ class ViewController: UIViewController {
         
         self.tableBtn.addTarget(self, action: #selector(tableAction), for: .touchUpInside);
         self.connectionBtn.addTarget(self, action: #selector(connectionAction), for: .touchUpInside);
+        
+        self.view.addSubview(self.mainView)
+        self.mainView.frame = CGRect(x: 0, y: 250, width: self.view.frame.size.width, height: 200)
     }
     @objc func tableAction(){
-        print(ATMacro.at_iphoneX())
+        print(ATKit.at_iphoneX())
         let nvc = UINavigationController.init(rootViewController: AppTableViewController())
         self.present(nvc, animated: true, completion: nil) 
     }

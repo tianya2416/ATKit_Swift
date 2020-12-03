@@ -32,7 +32,7 @@ class AppConnectionController: UIViewController {
         self.edgesForExtendedLayout = [];
         self.view.addSubview(self.collectionView);
         self.collectionView.frame = self.view.frame;
-        self.showNavTitle(title: "collectionView", back: true)
+        self.showNavTitle(title: "collectionView")
     }
 }
 extension AppConnectionController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
@@ -66,11 +66,9 @@ extension AppConnectionController : UICollectionViewDelegate,UICollectionViewDat
         return 10;
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return AppCollectionViewCell.sizeForCollectionView(collectionView: collectionView, indexPath: indexPath, width: (self.view.frame.size.width - 40 - 1)/3, type: .width) { (cell) in
-//
-//        }
-        let width = CGFloat((UIScreen.main.bounds.size.width - 4*top - 1)/3);
-        return CGSize.init(width:width, height: 40);
+        return AppCollectionViewCell.sizeForCollectionView(collectionView: collectionView, indexPath: indexPath, fixedValue: (self.view.frame.size.width - 40 - 1)/3, dynamic: .width) { (cell) in
+
+        }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : AppCollectionViewCell = AppCollectionViewCell.cellForCollectionView(collectionView:collectionView, indexPath: indexPath);

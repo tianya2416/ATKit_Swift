@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ATKit_Swift'
-  s.version          = '0.2.4'
+  s.version          = '0.2.5'
   s.summary          = 'Some classes and class category commonly used in iOS rapid development'
   s.description      = <<-DESC
                        Some classes and class category commonly used in iOS rapid development.
