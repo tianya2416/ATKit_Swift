@@ -11,14 +11,15 @@ let top : CGFloat  = 10;
 class AppConnectionController: UIViewController {
 
     lazy var layout: UICollectionViewFlowLayout = {
-        let layout : UICollectionViewFlowLayout = UICollectionViewFlowLayout.init();
+        let layout : UICollectionViewFlowLayout = UICollectionViewFlowLayout();
         layout.minimumLineSpacing = 0;
         layout.minimumInteritemSpacing = 0;
+
         layout.scrollDirection = .vertical;
         return layout;
     }()
     lazy var collectionView : UICollectionView = {
-        let collectionView : UICollectionView = UICollectionView.init(frame:CGRect.zero, collectionViewLayout: self.layout);
+        let collectionView : UICollectionView = UICollectionView(frame:CGRect.zero, collectionViewLayout: self.layout);
         collectionView.dataSource = self;
         collectionView.delegate = self;
         collectionView.showsVerticalScrollIndicator = false;
@@ -63,11 +64,11 @@ extension AppConnectionController : UICollectionViewDelegate,UICollectionViewDat
         return 2;
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10;
+        return 40;
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return AppCollectionViewCell.sizeForCollectionView(collectionView: collectionView, indexPath: indexPath, fixedValue: (self.view.frame.size.width - 40 - 1)/3, dynamic: .width) { (cell) in
-
+        return collectionView.sizeForCollectionView(classCell: AppCollectionViewCell.self, indexPath: indexPath, fixedValue: self.view.frame.size.width/3 - 15, dynamic: .width) { (cell) in
+            
         }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

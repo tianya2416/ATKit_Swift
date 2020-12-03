@@ -8,6 +8,7 @@
 
 import UIKit
 private var size_cache_key = 10000
+private var cell_cache_key = 10001
 
 public extension UICollectionViewCell{
     static var confiTag : Int = 32241981
@@ -45,69 +46,6 @@ public extension UICollectionViewCell{
             }
         }
         return cell as! Self
-    }
-    
-    class func sizeForCollectionView(collectionView :UICollectionView,indexPath :IndexPath,fixedValue :CGFloat,dynamic :ATDynamic,config:((_ cell :UICollectionViewCell) ->Void)? = nil) ->CGSize{
-        
-        let cell = cellForCollectionView(collectionView: collectionView, indexPath: indexPath)
-        let haveCache = cell.haveCache(indexPath: indexPath)
-        if haveCache {
-            let zeroValue = NSValue(cgSize: CGSize.zero)
-            let sizeCache = cell.sizeCacheAtIndexPath(indexPath: indexPath)
-            if sizeCache.isEqual(to: zeroValue) == false {
-                return sizeCache.cgSizeValue
-            }
-        }
-        if config != nil {
-            config!(cell)
-        }
-        var  size = CGSize(width: fixedValue, height: fixedValue)
-        if dynamic != ATDynamic.size {
-            let att = dynamic == .width ? NSLayoutConstraint.Attribute.width : NSLayoutConstraint.Attribute.height
-            let con = NSLayoutConstraint(item: cell.contentView, attribute: att, relatedBy: .equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: fixedValue)
-            cell.contentView.addConstraint(con)
-            size = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-            cell.contentView.removeConstraint(con)
-        }else{
-            size = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-        }
-        if cell.sizeCache.count > indexPath.section {
-            let sizeValue = NSValue(cgSize: size)
-            var sectionCache : [NSValue] = cell.sizeCache[indexPath.section]
-            if haveCache {
-                sectionCache[indexPath.row] = sizeValue
-            }else{
-                sectionCache.insert(sizeValue, at: indexPath.row)
-            }
-        }
-        return size
-
-    }
-    private func sizeCacheAtIndexPath(indexPath :IndexPath) -> NSValue{
-        let sizeValue = self.sizeCache[indexPath.section][indexPath.row]
-        return sizeValue
-    }
-    private func haveCache(indexPath :IndexPath) -> Bool{
-        var haveCache = false
-        var sizeCache : [[NSValue]] = self.sizeCache
-        if sizeCache.count > indexPath.section {
-            haveCache = sizeCache[indexPath.section].count > indexPath.row ? true : false
-        }else{
-            var index = sizeCache.count
-            while index < indexPath.section + 1 {
-                sizeCache.append(contentsOf: [])
-                index = index + 1
-            }
-        }
-        return haveCache
-    }
-    private var sizeCache :[[NSValue]]{
-        set{
-            objc_setAssociatedObject(self, &size_cache_key, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY_NONATOMIC)
-        }get{
-            guard let datas = objc_getAssociatedObject(self, &size_cache_key) as? [[NSValue]] else { return [] }
-            return datas
-        }
     }
 }
 public extension UICollectionReusableView{
@@ -148,5 +86,104 @@ public extension UICollectionReusableView{
             }
         }
         return cell as! Self
+    }
+}
+public extension UICollectionView{
+    func sizeForCollectionView<T:UICollectionViewCell>(classCell :T.Type,indexPath :IndexPath,fixedValue :CGFloat,dynamic :ATDynamic,config:((_ cellss :UICollectionViewCell) ->Void)? = nil) ->CGSize{
+        if self.sizeCache == nil {
+            self.sizeCache = []
+        }
+        let cache = self.haveCache(indexPath: indexPath)
+        if cache {
+            let zeroValue = NSValue(cgSize: CGSize.zero)
+            let sizeCache = self.sizeCacheAtIndexPath(indexPath: indexPath)
+            if sizeCache.isEqual(to: zeroValue) == false {
+                return sizeCache.cgSizeValue
+            }
+        }
+        let cell = classCell.cellForCollectionView(collectionView: self, indexPath: indexPath)
+        if config != nil {
+            config!(cell)
+        }
+        var  size = CGSize(width: fixedValue, height: fixedValue)
+        if dynamic != ATDynamic.size {
+            let attribute = dynamic == .width ? NSLayoutConstraint.Attribute.width : NSLayoutConstraint.Attribute.height
+            let con = NSLayoutConstraint(item: cell.contentView, attribute: attribute, relatedBy: .equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: fixedValue)
+            cell.contentView.addConstraint(con)
+            size = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+            cell.contentView.removeConstraint(con)
+        }else{
+            size = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        }
+        if self.sizeCache!.count > indexPath.section {
+            let sizeValue = NSValue(cgSize: size)
+            var sectionCache : [NSValue] = self.sizeCache![indexPath.section]
+            if cache {
+                sectionCache[indexPath.row] = sizeValue
+            }else{
+                sectionCache.append(sizeValue)
+            }
+            self.sizeCache![indexPath.section] = sectionCache
+        }
+        return size
+
+    }
+//    private func registerIdentify<T:UICollectionViewCell>(classCell : T.Type,indexPath :IndexPath) ->UICollectionViewCell{
+//        let identy : String =  NSStringFromClass(classCell.classForCoder())
+//        print("registerIdentify : ",identy)
+//        var res1 : Bool = false
+//        var res2 : Bool = false
+//        let dic1  = self.value(forKeyPath: "cellNibDict")
+//        if dic1 != nil {
+//            let dic1 : NSDictionary = (dic1 as?  NSDictionary)!
+//            res1 = (dic1.value(forKeyPath:identy) != nil) ? true : false
+//        }
+//        let dic2  = self.value(forKeyPath: "cellClassDict")
+//        if dic2 != nil {
+//            let dic2 : NSDictionary = (dic2 as? NSDictionary)!
+//            res2 = (dic2.value(forKeyPath: identy) != nil) ? true : false
+//        }
+//        let hasRegister : Bool = res1 || res2
+//        if hasRegister  == false {
+//            let nib =  Bundle.main.url(forResource:identy, withExtension:"nib")
+//            if (nib != nil) {
+//              self.register(UINib(nibName:identy, bundle: nil), forCellWithReuseIdentifier: identy)
+//            }else{
+//                self.register(classCell.classForCoder(), forCellWithReuseIdentifier: identy)
+//            }
+//        }
+//        let cell = self.dequeueReusableCell(withReuseIdentifier:identy, for: indexPath)
+//        return cell
+//    }
+
+
+    private func sizeCacheAtIndexPath(indexPath :IndexPath) -> NSValue{
+        let sizeValue = self.sizeCache![indexPath.section][indexPath.row]
+        return sizeValue
+    }
+    private func haveCache(indexPath :IndexPath) -> Bool{
+        var haveCache = false
+        if self.sizeCache!.count > indexPath.section {
+            haveCache = self.sizeCache![indexPath.section].count > indexPath.row ? true : false
+        }else{
+            var index = self.sizeCache!.count
+            while index < indexPath.section + 1 {
+                let listCaches : [NSValue] = []
+                self.sizeCache!.append(listCaches)
+                index = index + 1
+            }
+        }
+        return haveCache
+    }
+    
+    private var sizeCache: [[NSValue]]? {
+        set {
+            if let newValue = newValue {
+                objc_setAssociatedObject(self, &(size_cache_key), newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            }
+        }
+        get {
+            return objc_getAssociatedObject(self, &(size_cache_key)) as? [[NSValue]]
+        }
     }
 }
