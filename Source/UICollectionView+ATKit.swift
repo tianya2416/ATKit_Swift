@@ -10,7 +10,8 @@ import UIKit
 private var size_cache_key = 10000
 private var cell_cache_key = 10001
 public extension UICollectionView{
-    static let replaceAction: Void = {
+    //MARK: swizzling init
+    static let initializeMethod: Void = {
         ATKit.swizzlingForClass(UICollectionView.self, originalSelector: #selector(reloadData), swizzledSelector: #selector(at_reloadData))
         ATKit.swizzlingForClass(UICollectionView.self, originalSelector: #selector(reloadSections(_:)), swizzledSelector: #selector(at_reloadSections(_:)))
         
@@ -22,7 +23,7 @@ public extension UICollectionView{
         
         ATKit.swizzlingForClass(UICollectionView.self, originalSelector: #selector(moveItem(at:to:)), swizzledSelector: #selector(at_moveItem(_:to:)))
     }()
-    //MARK:about size
+    //MARK:about size 使用该方法需要在AppDelegate初始化UICollectionView.initializeMethod
     func sizeForCollectionView<T:UICollectionViewCell>(classCell :T.Type,indexPath :IndexPath,fixedValue :CGFloat,dynamic :ATDynamic,config:((_ cellss :UICollectionViewCell) ->Void)? = nil) ->CGSize{
         if self.sizeCache == nil {
             self.sizeCache = []
@@ -30,7 +31,6 @@ public extension UICollectionView{
         if self.cellCache == nil {
             self.cellCache = [:]
         }
-        UICollectionView.replaceAction
         let cache = self.haveCache(indexPath: indexPath)
         if cache {
             let zeroValue = NSValue(cgSize: CGSize.zero)
