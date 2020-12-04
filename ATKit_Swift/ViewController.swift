@@ -40,6 +40,10 @@ class ViewController: UIViewController {
         self.view.addSubview(self.mainView)
         self.mainView.frame = CGRect(x: 0, y: 250, width: self.view.frame.size.width, height: 200)
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
     @objc func tableAction(){
         print(ATKit.at_iphoneX())
         let nvc = UINavigationController.init(rootViewController: AppTableViewController())

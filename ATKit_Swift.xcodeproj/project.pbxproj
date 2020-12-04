@@ -18,6 +18,7 @@
 		0F4C5D98246688990030D2C4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C5D95246688990030D2C4 /* README.md */; };
 		0F4C5D99246688990030D2C4 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C5D96246688990030D2C4 /* LICENSE */; };
 		0F4C5D9C246688F40030D2C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4C5D9B246688F40030D2C4 /* ViewController.swift */; };
+		0F79E589257A097200E5F30A /* UICollectionView+ATKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79E588257A097200E5F30A /* UICollectionView+ATKit.swift */; };
 		0F97FC372577B8140074E91F /* ATKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F97FC342577B8140074E91F /* ATKit.swift */; };
 		0F97FC392577B8140074E91F /* ATKit_Swift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0F97FC362577B8140074E91F /* ATKit_Swift.podspec */; };
 		0F9E96E125787AAA00B6DD2B /* UIViewController+ATKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9E96E025787AAA00B6DD2B /* UIViewController+ATKit.swift */; };
@@ -44,6 +45,7 @@
 		0F4C5D95246688990030D2C4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0F4C5D96246688990030D2C4 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0F4C5D9B246688F40030D2C4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0F79E588257A097200E5F30A /* UICollectionView+ATKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+ATKit.swift"; sourceTree = "<group>"; };
 		0F97FC342577B8140074E91F /* ATKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATKit.swift; sourceTree = "<group>"; };
 		0F97FC362577B8140074E91F /* ATKit_Swift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATKit_Swift.podspec; sourceTree = "<group>"; };
 		0F9E96E025787AAA00B6DD2B /* UIViewController+ATKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ATKit.swift"; sourceTree = "<group>"; };
@@ -113,10 +115,11 @@
 			isa = PBXGroup;
 			children = (
 				0F97FC342577B8140074E91F /* ATKit.swift */,
-				0F9E96E025787AAA00B6DD2B /* UIViewController+ATKit.swift */,
+				0F79E588257A097200E5F30A /* UICollectionView+ATKit.swift */,
 				0F9E96E325787B7F00B6DD2B /* UICollectionViewCell+ATKit.swift */,
 				0F9E96E625787BB900B6DD2B /* UITableViewCell+ATKit.swift */,
 				0F9E96E925787C0100B6DD2B /* UIView+ATKit.swift */,
+				0F9E96E025787AAA00B6DD2B /* UIViewController+ATKit.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				0F97FC372577B8140074E91F /* ATKit.swift in Sources */,
 				0F9E96EF25787FD000B6DD2B /* AppMainView.swift in Sources */,
 				0F4C5D932466885B0030D2C4 /* AppTableViewController.swift in Sources */,
+				0F79E589257A097200E5F30A /* UICollectionView+ATKit.swift in Sources */,
 				0F4C5D942466885B0030D2C4 /* AppConnectionController.swift in Sources */,
 				0F9E96EA25787C0100B6DD2B /* UIView+ATKit.swift in Sources */,
 				0F9E96E125787AAA00B6DD2B /* UIViewController+ATKit.swift in Sources */,

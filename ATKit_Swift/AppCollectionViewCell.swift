@@ -11,6 +11,9 @@ import UIKit
 class AppCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var titleLab: UILabel!
+    lazy var dic: [String:UICollectionViewCell] = {
+        return [:]
+    }()
     override func awakeFromNib() {
         super.awakeFromNib()
         self.contentView.backgroundColor = UIColor.init(white: 0, alpha: 0.08);
