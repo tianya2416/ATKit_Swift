@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -22,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UICollectionView.initializeMethod
         return true
     }
-
 
 }
 

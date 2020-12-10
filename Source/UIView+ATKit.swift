@@ -10,9 +10,8 @@ import UIKit
 
 public extension UIView{
     class func xibName() -> String{
-        let name :String = NSStringFromClass(self.classForCoder())
-        let datas :[String] = name.components(separatedBy: ".")
-        return datas.count > 0 ? datas.last! : ""
+        let name = String(describing: self)
+        return name
     }
     class func nibName() ->String {
         return xibName()

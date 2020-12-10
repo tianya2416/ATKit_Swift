@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(ATKit.at_iphoneX())
         self.edgesForExtendedLayout = [];
         self.showNavTitle(title: "主页");
         self.view.addSubview(self.tableBtn);
@@ -45,7 +44,6 @@ class ViewController: UIViewController {
         
     }
     @objc func tableAction(){
-        print(ATKit.at_iphoneX())
         let nvc = UINavigationController.init(rootViewController: AppTableViewController())
         self.present(nvc, animated: true, completion: nil) 
     }

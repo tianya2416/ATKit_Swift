@@ -24,12 +24,13 @@ public extension UICollectionView{
         ATKit.swizzlingForClass(UICollectionView.self, originalSelector: #selector(moveItem(at:to:)), swizzledSelector: #selector(at_moveItem(_:to:)))
     }()
     //MARK:about size 使用该方法需要在AppDelegate初始化UICollectionView.initializeMethod
-    func sizeForCollectionView<T:UICollectionViewCell>(classCell :T.Type,indexPath :IndexPath,fixedValue :CGFloat,dynamic :ATDynamic,config:((_ cellss :UICollectionViewCell) ->Void)? = nil) ->CGSize{
+    func sizeForCollectionView<T:UICollectionViewCell>(classCell :T.Type,indexPath :IndexPath,fixedValue :CGFloat,dynamic :ATDynamic,config:((_ cellss :T) ->Void)? = nil) ->CGSize{
         if self.sizeCache == nil {
             self.sizeCache = []
         }
         if self.cellCache == nil {
             self.cellCache = [:]
+            
         }
         let cache = self.haveCache(indexPath: indexPath)
         if cache {
@@ -41,7 +42,7 @@ public extension UICollectionView{
         }
         let cell = at_cellForClassCell(classCell: classCell)
         if config != nil {
-            config!(cell)
+            config!(cell as! T)
         }
         var  size = CGSize(width: fixedValue, height: fixedValue)
         if dynamic != ATDynamic.size {

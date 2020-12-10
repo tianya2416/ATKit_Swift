@@ -127,4 +127,12 @@ private let closeIcon = "icon_nav_close"
         }
         return rootVC
     }
+    open class func vcFromStoryBoard(storyBoard :String,identifier :String) -> UIViewController{
+        let sbName : String = storyBoard.count > 0 ? storyBoard : NSStringFromClass(self)
+        let theId  : String = identifier.count > 0 ? storyBoard : NSStringFromClass(self)
+        let story = UIStoryboard(name: sbName, bundle: nil)
+        
+        let controller = story.instantiateViewController(withIdentifier: theId)
+        return controller
+    }
 }

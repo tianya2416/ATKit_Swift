@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F322A36257F78E200915894 /* AppBlueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F322A35257F78E200915894 /* AppBlueView.swift */; };
+		0F322A3A257F78F400915894 /* AppBlueView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F322A39257F78F400915894 /* AppBlueView.xib */; };
 		0F4C5D77246687FD0030D2C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4C5D76246687FD0030D2C4 /* AppDelegate.swift */; };
 		0F4C5D7E246687FD0030D2C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C5D7C246687FD0030D2C4 /* Main.storyboard */; };
 		0F4C5D80246688000030D2C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C5D7F246688000030D2C4 /* Assets.xcassets */; };
@@ -32,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		04856DCE72BF12A392917A00 /* Pods_ATKit_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ATKit_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F322A35257F78E200915894 /* AppBlueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBlueView.swift; sourceTree = "<group>"; };
+		0F322A39257F78F400915894 /* AppBlueView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppBlueView.xib; sourceTree = "<group>"; };
 		0F4C5D73246687FD0030D2C4 /* ATKit_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATKit_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F4C5D76246687FD0030D2C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F4C5D7D246687FD0030D2C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,13 +104,15 @@
 				0F4C5D902466885A0030D2C4 /* AppConnectionController.swift */,
 				0F4C5D76246687FD0030D2C4 /* AppDelegate.swift */,
 				0F9E96EE25787FD000B6DD2B /* AppMainView.swift */,
+				0F9E96F125787FDE00B6DD2B /* AppMainView.xib */,
 				0F4C5D8F2466885A0030D2C4 /* AppTableViewController.swift */,
 				0F4C5D7F246688000030D2C4 /* Assets.xcassets */,
 				0F4C5D84246688000030D2C4 /* Info.plist */,
 				0F4C5D81246688000030D2C4 /* LaunchScreen.storyboard */,
 				0F4C5D7C246687FD0030D2C4 /* Main.storyboard */,
 				0F4C5D9B246688F40030D2C4 /* ViewController.swift */,
-				0F9E96F125787FDE00B6DD2B /* AppMainView.xib */,
+				0F322A35257F78E200915894 /* AppBlueView.swift */,
+				0F322A39257F78F400915894 /* AppBlueView.xib */,
 			);
 			path = ATKit_Swift;
 			sourceTree = "<group>";
@@ -208,6 +214,7 @@
 				0F4C5D98246688990030D2C4 /* README.md in Resources */,
 				0F4C5D922466885B0030D2C4 /* AppCollectionViewCell.xib in Resources */,
 				0F4C5D7E246687FD0030D2C4 /* Main.storyboard in Resources */,
+				0F322A3A257F78F400915894 /* AppBlueView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +262,7 @@
 				0F9E96E425787B7F00B6DD2B /* UICollectionViewCell+ATKit.swift in Sources */,
 				0F4C5D912466885B0030D2C4 /* AppCollectionViewCell.swift in Sources */,
 				0F4C5D77246687FD0030D2C4 /* AppDelegate.swift in Sources */,
+				0F322A36257F78E200915894 /* AppBlueView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

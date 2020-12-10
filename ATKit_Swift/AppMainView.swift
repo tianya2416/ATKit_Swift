@@ -9,13 +9,12 @@
 import UIKit
 
 class AppMainView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var blueView: AppBlueView!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        //self.blueView.backgroundColor = UIColor.red
     }
-    */
-
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
 }
