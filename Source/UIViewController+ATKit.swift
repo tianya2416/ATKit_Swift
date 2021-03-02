@@ -11,6 +11,18 @@ private let backIcon  = "icon_nav_back"
 private let closeIcon = "icon_nav_close"
 
 @objc extension UIViewController{
+    private struct AssociatedBarKey {
+        static var key = "prefersNavigationBarHidden"
+    }
+    open var prefersNavigationBarHidden: Bool {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedBarKey.key) as? Bool ?? false
+        }
+        set {
+            objc_setAssociatedObject(self, &AssociatedBarKey.key, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+        }
+    }
+    
     open func showNavTitle(title : String?){
         self.showNavTitle(title: title,backIcon: backIcon)
     }
@@ -89,33 +101,22 @@ private let closeIcon = "icon_nav_close"
     }
     
     open class func rootTopPresentedController()-> UIViewController{
-        return self.rootTopPresentedControllerWihtKeys(keys: nil)
+        guard let window = UIApplication.shared.delegate?.window else { return UIViewController() }
+        guard let vc = window?.rootViewController?.topPresentedController() else { return UIViewController() }
+        return vc
     }
-    open class func rootTopPresentedControllerWihtKeys(keys :[String]? = nil) ->UIViewController{
-        let window : UIWindow = (UIApplication.shared.delegate?.window)!!
-        return (window.rootViewController?.topPresentedControllerWihtKeys(keys: keys))!
+    open func topPresentedController() ->UIViewController{
+        return self.rootTopPresentedController()
     }
-    open func topPresentedController()->UIViewController{
-        return self.topPresentedControllerWihtKeys(keys:nil)
-    }
-    open func topPresentedControllerWihtKeys(keys:[String]? = nil)->UIViewController{
-        let top : [String] = (keys != nil) ? keys! : ["centerViewController", "contentViewController"]
-        var rootVC : UIViewController = self;
+    open func rootTopPresentedController() -> UIViewController{
+        var rootVC : UIViewController = self
         if rootVC is UITabBarController {
             let tabVC : UITabBarController = rootVC as! UITabBarController
-            let vc = tabVC.selectedViewController != nil ? tabVC.selectedViewController : tabVC.children.first
-            if vc != nil {
-                return vc!.topPresentedControllerWihtKeys(keys: top)
+            if let vc = tabVC.selectedViewController{
+                return vc.rootTopPresentedController()
             }
-        }
-        for str in top{
-            if rootVC.responds(to: NSSelectorFromString(str)) {
-                let vc  = rootVC.perform(NSSelectorFromString(str))
-                let ct = vc?.takeUnretainedValue()
-                if ct is UIViewController {
-                    let ctrl : UIViewController = ct as! UIViewController
-                    return ctrl.topPresentedControllerWihtKeys(keys: top)
-                }
+            if let vc = tabVC.children.first {
+                return vc.rootTopPresentedController()
             }
         }
         while rootVC.presentedViewController != nil && rootVC.presentedViewController?.isBeingDismissed == false {

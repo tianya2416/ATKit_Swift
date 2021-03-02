@@ -14,7 +14,7 @@ public enum ATDynamic {
     case size
 }
 public class ATKit : NSObject {
-    public class func swizzlingForClass(_ forClass: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
+    class func swizzlingForClass(_ forClass: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
         let originalMethod = class_getInstanceMethod(forClass, originalSelector)
         let swizzledMethod = class_getInstanceMethod(forClass, swizzledSelector)
         guard (originalMethod != nil && swizzledMethod != nil) else {return}

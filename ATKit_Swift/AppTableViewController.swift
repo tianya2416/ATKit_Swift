@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppTableViewController: UIViewController {
+class AppTableViewController: BaseViewController {
 
     lazy var tableView : UITableView = {
         let tableView : UITableView = UITableView.init(frame: CGRect.zero, style:.grouped);
@@ -23,10 +23,10 @@ class AppTableViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.edgesForExtendedLayout = [];
         self.view.addSubview(self.tableView);
         self.tableView.frame = self.view.frame
         self.showNavTitle(title: "tableView");
+        
     }
 
 }

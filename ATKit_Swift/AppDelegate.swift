@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.window?.makeKeyAndVisible();
         self.window?.backgroundColor = UIColor.white;
-        let nvc = UINavigationController.init(rootViewController: ViewController.init());
+        let nvc = BaseNavigationController.init(rootViewController: ViewController.init());
         self.window?.rootViewController = nvc;
         UICollectionView.initializeMethod
         return true

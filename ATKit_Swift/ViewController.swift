@@ -8,7 +8,7 @@
 //s.source_files     = 'Source/*.swift'
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
     lazy var tableBtn : UIButton = {
         return UIButton.init(type: .custom)
     }()
@@ -17,6 +17,9 @@ class ViewController: UIViewController {
     }()
     lazy var mainView : AppMainView = {
         return AppMainView.instanceView()
+    }()
+    lazy var redView : AppRedView = {
+        return AppRedView.instanceView()
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,14 +41,20 @@ class ViewController: UIViewController {
         
         self.view.addSubview(self.mainView)
         self.mainView.frame = CGRect(x: 0, y: 250, width: self.view.frame.size.width, height: 200)
+        
+        self.view.addSubview(self.redView)
+        self.redView.frame = CGRect(x: 0, y: 450, width: self.view.frame.size.width, height: 100)
+
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
     }
     @objc func tableAction(){
-        let nvc = UINavigationController.init(rootViewController: AppTableViewController())
-        self.present(nvc, animated: true, completion: nil) 
+        UIViewController.rootTopPresentedController().navigationController?.pushViewController(AppTableViewController(), animated: true)
+//        let root = UIViewController.rootTopPresentedController()
+//        let nvc = UINavigationController.init(rootViewController: AppTableViewController())
+//        root.present(nvc, animated: true, completion: nil)
     }
     @objc func connectionAction(){
         UIViewController.rootTopPresentedController().navigationController?.pushViewController(AppConnectionController(), animated: true);

@@ -8,8 +8,9 @@
 
 import UIKit
 let top : CGFloat  = 10;
-class AppConnectionController: UIViewController {
+class AppConnectionController: BaseViewController {
 
+    var nav : UINavigationController? = nil
     lazy var layout: UICollectionViewFlowLayout = {
         let layout : UICollectionViewFlowLayout = UICollectionViewFlowLayout();
         layout.minimumLineSpacing = 0;
@@ -26,14 +27,17 @@ class AppConnectionController: UIViewController {
         collectionView.isScrollEnabled = true;
         collectionView.backgroundColor = UIColor.white;
         collectionView.backgroundView?.backgroundColor = UIColor.white;
+        
         return collectionView
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.edgesForExtendedLayout = [];
         self.view.addSubview(self.collectionView);
         self.collectionView.frame = self.view.frame;
-        self.showNavTitle(title: "collectionView")
+        self.showNavTitle(title: "取消左滑手势")
+        let traget = self.navigationController?.interactivePopGestureRecognizer?.delegate
+        let pan = UIPanGestureRecognizer(target: traget, action: nil)
+        self.view.addGestureRecognizer(pan)
     }
 }
 extension AppConnectionController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
@@ -84,6 +88,7 @@ extension AppConnectionController : UICollectionViewDelegate,UICollectionViewDat
     }
     //MARK:UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let vc = HiddenController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

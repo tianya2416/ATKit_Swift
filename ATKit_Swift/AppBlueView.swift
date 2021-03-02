@@ -10,15 +10,24 @@ import UIKit
 
 class AppBlueView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = UIColor.yellow
+    }
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+}
+class AppRedView : UIView{
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.backgroundColor = UIColor.red
+    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = UIColor.red
+    }
+    func setName(){
+        print("==================");
     }
 }
