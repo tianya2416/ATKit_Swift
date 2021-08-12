@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.window?.makeKeyAndVisible();
         self.window?.backgroundColor = UIColor.white;
-        let nvc = BaseNavigationController.init(rootViewController: ViewController.init());
-        self.window?.rootViewController = nvc;
+       // let nvc = BaseNavigationController(rootViewController: ViewController())
+        self.window?.rootViewController = ATTabController();
         UICollectionView.initializeMethod
         return true
     }

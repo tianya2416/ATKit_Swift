@@ -25,7 +25,7 @@ class AppTableViewController: BaseViewController {
         super.viewDidLoad()
         self.view.addSubview(self.tableView);
         self.tableView.frame = self.view.frame
-        self.showNavTitle(title: "tableView");
+        self.showNaviTitle(title: "tableView");
         
     }
 

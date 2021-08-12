@@ -34,7 +34,7 @@ class AppConnectionController: BaseViewController {
         super.viewDidLoad()
         self.view.addSubview(self.collectionView);
         self.collectionView.frame = self.view.frame;
-        self.showNavTitle(title: "取消左滑手势")
+        self.showNaviTitle(title: "取消左滑手势")
         let traget = self.navigationController?.interactivePopGestureRecognizer?.delegate
         let pan = UIPanGestureRecognizer(target: traget, action: nil)
         self.view.addGestureRecognizer(pan)

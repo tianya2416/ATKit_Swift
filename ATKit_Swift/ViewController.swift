@@ -24,7 +24,7 @@ class ViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.edgesForExtendedLayout = [];
-        self.showNavTitle(title: "主页");
+        self.showNaviTitle(title: "主页");
         self.view.addSubview(self.tableBtn);
         self.view.addSubview(self.connectionBtn);
         
@@ -51,10 +51,10 @@ class ViewController: BaseViewController {
         
     }
     @objc func tableAction(){
-        UIViewController.rootTopPresentedController().navigationController?.pushViewController(AppTableViewController(), animated: true)
-//        let root = UIViewController.rootTopPresentedController()
-//        let nvc = UINavigationController.init(rootViewController: AppTableViewController())
-//        root.present(nvc, animated: true, completion: nil)
+//        UIViewController.rootTopPresentedController().navigationController?.pushViewController(AppTableViewController(), animated: true)
+        let root = UIViewController.rootTopPresentedController()
+        let nvc = UINavigationController.init(rootViewController: AppTableViewController())
+        root.present(nvc, animated: true, completion: nil)
     }
     @objc func connectionAction(){
         UIViewController.rootTopPresentedController().navigationController?.pushViewController(AppConnectionController(), animated: true);

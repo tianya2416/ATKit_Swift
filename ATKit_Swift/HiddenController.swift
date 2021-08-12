@@ -12,7 +12,6 @@ class HiddenController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.prefersNavigationBarHidden = true
         // Do any additional setup after loading the view.
     }
 }
